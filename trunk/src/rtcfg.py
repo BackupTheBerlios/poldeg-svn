@@ -13,20 +13,22 @@
 # GNU General Public License for more details.
 #
 
-import gettext
-import os
+import gettext, os, sys
 
-class Crtcfg
+class Crtcfg:
     def __init__(self):
-	self.glade_dir = '../glade'
 	if os.path.isdir('../po'):
 	    self.po_dir = '../po'
-	try
-    	    txt = gettext.translation('poldeg', self.po_dir)
+	try:
+	    txt = gettext.translation('poldeg', self.po_dir)
 	    _ = txt.gettext
-	except
+        except:
 	    def _(str):
 		return str
+	if os.path.isdir('../glade'):
+	    self.glade_dir = '../glade'
+	else:
+	    print _('Couldn\'t find glade directory.')
+    	    sys.exit(1)
 
-if __name == '__main__':
-    rtcfg = Crtcfg
+rtcfg = Crtcfg()

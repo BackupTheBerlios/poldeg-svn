@@ -14,12 +14,7 @@
 # GNU General Public License for more details.
 #
 
-import sys
-
-try:
-    import rtcfg
-except:
-    sys.exit(1)
+import sys, rtcfg
 	
 if __name__ == '__main__':
     pass
