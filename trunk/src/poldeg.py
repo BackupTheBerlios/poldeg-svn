@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #
+# poldeg
 # poldeg.py
 #
 # Copyright 2007 Lukasz Kies
@@ -18,7 +19,31 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import sys, rtcfg
-	
+import sys
+from misc import *
+
+try:
+    import poldek
+except:
+    poldegError('Couldn\'t import poldek module.')
+try:
+    import pygtk
+    pygtk.require('2.0')
+    import gtk
+    import gtk.glade
+except:
+    poldegError('Couldn\'t import GTK modules.')
+    sys.exit(1)
+
+class Cpoldeg:
+    def __init__(self):
+        poldek.lib_init()
+        self.ctx = poldek.poldek_ctx()
+        self.ctx.load_config()
+        try:
+            self.ctx.setup()
+        except:
+            poldegError('poldek setup error.')
+
 if __name__ == '__main__':
-    rt_config = rtcfg.Crtcfg()
+    poldeg_main = Cpoldeg()

@@ -1,5 +1,6 @@
 #
-# rtcfg.py
+# poldeg
+# misc.py
 #
 # Copyright 2007 Lukasz Kies
 #
@@ -17,20 +18,25 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import gettext, os, sys
+import sys
+import os
+import gettext
 
-class Crtcfg:
-    def __init__(self):
-	if os.path.isdir('../po'):
-	    self.po_dir = '../po'
-	try:
-	    txt = gettext.translation('poldeg', self.po_dir)
-	    _ = txt.gettext
-        except:
-	    def _(str):
-		return str
-	if os.path.isdir('../glade'):
-	    self.glade_dir = '../glade'
-	else:
-	    print _('Couldn\'t find glade directory.')
-    	    sys.exit(1)
+if os.path.isdir('../po'):
+    poldeg_podir = '../po'
+try:
+    txt = gettext.translation('poldeg', poldeg_podir)
+    _ = txt.gettext
+except:
+    def _(str):
+        return str
+    
+def poldegError(str):
+    '''Print error messages to console'''
+    print _(str)
+    sys.exit(1)
+    
+if os.path.isdir('../glade'):
+    poldeg_gladedir = '../glade'
+else:
+    poldegError('Couldn\'t find glade directory.')
