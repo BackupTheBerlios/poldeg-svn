@@ -25,14 +25,14 @@ from misc import *
 try:
     import poldek
 except:
-    poldegError('Couldn\'t import poldek module.')
+    poldegError(_('Couldn\'t import poldek module.'))
 try:
     import pygtk
     pygtk.require('2.0')
     import gtk
     import gtk.glade
 except:
-    poldegError('Couldn\'t import GTK modules.')
+    poldegError(_('Couldn\'t import GTK modules.'))
     sys.exit(1)
 
 class Cpoldeg:
@@ -43,7 +43,7 @@ class Cpoldeg:
         try:
             self.ctx.setup()
         except:
-            poldegError('poldek setup error.')
+            poldegError(_('poldek setup error.'))
 
 if __name__ == '__main__':
     poldeg_main = Cpoldeg()

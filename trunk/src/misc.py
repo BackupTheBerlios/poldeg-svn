@@ -33,10 +33,10 @@ except:
     
 def poldegError(str):
     '''Print error messages to console'''
-    print _(str)
+    print str
     sys.exit(1)
     
 if os.path.isdir('../glade'):
     poldeg_gladedir = '../glade'
 else:
-    poldegError('Couldn\'t find glade directory.')
+    poldegError(_('Couldn\'t find glade directory.'))
