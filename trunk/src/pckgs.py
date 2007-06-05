@@ -1,7 +1,6 @@
-#!/usr/bin/env python
 #
 # poldeg
-# poldeg.py
+# pckgs.py
 #
 # Copyright 2007 Lukasz Kies
 #
@@ -22,32 +21,6 @@
 import sys
 from misc import *
 
-try:
-    import poldek
-except:
-    poldegError(_('Couldn\'t import poldek module.'))
-try:
-    import pygtk
-    pygtk.require('2.0')
-    import gtk
-    import gtk.glade
-except:
-    poldegError(_('Couldn\'t import PyGTK modules.'))
-    sys.exit(1)
-
-import pckgs
-
-class Cpoldeg:
+class Cpckgs_available:
     def __init__(self):
-        poldek.lib_init()
-        self.ctx = poldek.poldek_ctx()
-        self.ctx.load_config()
-        try:
-            self.ctx.setup()
-        except:
-            poldegError(_('poldek setup error.'))
-        self.pckgs_available = pckgs.Cpckgs_available()
-        self.pckgs_available.pckgs = self.ctx.get_avail_packages()
-
-if __name__ == '__main__':
-    poldeg_main = Cpoldeg()
+        self.pckgs = None
