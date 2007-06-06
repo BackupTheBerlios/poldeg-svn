@@ -47,7 +47,11 @@ class Cpoldeg:
         except:
             poldegError(_('poldek setup error.'))
         self.pckgs_available = pckgs.Cpckgs_available()
-        self.pckgs_available.pckgs = self.ctx.get_avail_packages()
+        self.widgets = gtk.glade.XML('%s/win_main.glade' % poldeg_gladedir)
+        self.sdic = {'s_win_main_destroy' : gtk.main_quit}
+        self.widgets.signal_autoconnect(self.sdic)
 
 if __name__ == '__main__':
     poldeg_main = Cpoldeg()
+    gtk.main()
+    
