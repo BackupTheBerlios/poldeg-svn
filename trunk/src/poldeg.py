@@ -26,14 +26,18 @@ try:
     import poldek
 except:
     poldegError(_('Couldn\'t import poldek module.'))
+
 try:
     import pygtk
     pygtk.require('2.0')
+except:
+    pass
+
+try:
     import gtk
     import gtk.glade
 except:
     poldegError(_('Couldn\'t import PyGTK modules.'))
-    sys.exit(1)
 
 import pckgs
 
