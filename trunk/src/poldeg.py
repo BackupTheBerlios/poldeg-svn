@@ -51,7 +51,7 @@ class Cpoldeg:
         except:
             poldegError(_('poldek setup error.'))
         self.pckgs_available = pckgs.Cpckgs_available()
-        self.widgets = gtk.glade.XML('%s/win_main.glade' % poldeg_gladedir)
+        self.widgets = gtk.glade.XML('%s/poldeg.glade' % poldeg_gladedir)
         self.sdic = {'s_win_main_destroy' : gtk.main_quit}
         self.widgets.signal_autoconnect(self.sdic)
 

@@ -29,6 +29,7 @@ try:
     _ = txt.gettext
 except:
     def _(str):
+        '''Leave given string as-is'''
         return str
     
 def poldegError(str):
