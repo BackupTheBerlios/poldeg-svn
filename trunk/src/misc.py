@@ -18,9 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import sys
-import os
-import gettext
+import sys, os, gettext
 
 if os.path.isdir('../po'):
     poldeg_podir = '../po'

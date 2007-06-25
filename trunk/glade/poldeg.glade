@@ -111,7 +111,7 @@
   <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="focus_on_map">True</property>
   <property name="urgency_hint">False</property>
-  <signal name="destroy" handler="s_win_main_destroy" last_modification_time="Sun, 24 Jun 2007 12:30:01 GMT"/>
+  <signal name="delete_event" handler="s_win_main_destroy" last_modification_time="Mon, 25 Jun 2007 17:04:51 GMT"/>
 
   <child>
     <widget class="GtkNotebook" id="notebook">

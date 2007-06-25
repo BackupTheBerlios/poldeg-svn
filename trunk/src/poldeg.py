@@ -40,20 +40,13 @@ except:
     poldegError(_('Couldn\'t import PyGTK modules.'))
 
 import pckgs
+import gui
 
 class Cpoldeg:
     def __init__(self):
         poldek.lib_init()
-        self.ctx = poldek.poldek_ctx()
-        self.ctx.load_config()
-        try:
-            self.ctx.setup()
-        except:
-            poldegError(_('poldek setup error.'))
-        self.pckgs_available = pckgs.Cpckgs_available()
-        self.widgets = gtk.glade.XML('%s/poldeg.glade' % poldeg_gladedir)
-        self.sdic = {'s_win_main_destroy' : gtk.main_quit}
-        self.widgets.signal_autoconnect(self.sdic)
+        self.win_main = gui.Cwin_main()
+        self.pckgs = pckgs.Cpackages()
 
 if __name__ == '__main__':
     poldeg_main = Cpoldeg()

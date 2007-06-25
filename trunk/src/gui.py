@@ -1,6 +1,6 @@
 #
 # poldeg
-# pckgs.py
+# gui.py
 #
 # Copyright 2007 Lukasz Kies
 #
@@ -18,18 +18,22 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import sys
-from misc import _
-import poldek
+import pygtk, gtk, gtk.glade
+from misc import _, poldeg_gladedir
 
-class Cpackages:
+class Cwin_main:
     def __init__(self):
-        self.ctx = poldek.poldek_ctx()
-        self.cctx = poldek.poclidek_ctx(self.ctx)
-        self.ctx.load_config()
-        try:
-            self.ctx.setup()
-        except:
-            poldegError(_('poldek setup error.'))
-        self.avail = self.ctx.get_avail_packages()
-        self.cctx.load_packages(self.cctx.LOAD_ALL)    
+        self.widgets = gtk.glade.XML('%s/poldeg.glade' % poldeg_gladedir)
+        self.sdic = {'s_win_main_destroy' : self.poldeg_quit}
+        self.widgets.signal_autoconnect(self.sdic)
+
+    def poldeg_quit(self, widget, event):
+        msg = gtk.MessageDialog(None, 0, gtk.MESSAGE_QUESTION,
+gtk.BUTTONS_YES_NO, _('Quit poldeg?'))
+        result = msg.run()
+        msg.destroy()
+        if result == gtk.RESPONSE_YES:
+            gtk.main_quit()
+	    return False
+        else:
+            return True
