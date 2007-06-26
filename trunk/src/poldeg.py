@@ -20,7 +20,7 @@
 #
 
 import sys
-from misc import *
+from misc import _
 
 try:
     import poldek
@@ -29,7 +29,7 @@ except:
 
 try:
     import pygtk
-    pygtk.require('2.0')
+    pygtk.require('2.2')
 except:
     pass
 
@@ -47,8 +47,15 @@ class Cpoldeg:
         poldek.lib_init()
         self.win_main = gui.Cwin_main()
         self.pckgs = pckgs.Cpackages()
+        self.sdic = {'s_win_main_destroy' : self.win_main.poldeg_quit,
+'s_win_main_show': self.loading}
+        self.win_main.signals(self.sdic)
+        win = self.win_main.widgets.get_widget('win_main')
+        win.present()
+
+    def loading(self, widget):
+        self.pckgs.load()
 
 if __name__ == '__main__':
     poldeg_main = Cpoldeg()
     gtk.main()
-    

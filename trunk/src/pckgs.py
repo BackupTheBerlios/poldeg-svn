@@ -31,5 +31,7 @@ class Cpackages:
             self.ctx.setup()
         except:
             poldegError(_('poldek setup error.'))
+    
+    def load(self):
         self.avail = self.ctx.get_avail_packages()
         self.cctx.load_packages(self.cctx.LOAD_ALL)    

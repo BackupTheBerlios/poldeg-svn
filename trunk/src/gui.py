@@ -24,8 +24,8 @@ from misc import _, poldeg_gladedir
 class Cwin_main:
     def __init__(self):
         self.widgets = gtk.glade.XML('%s/poldeg.glade' % poldeg_gladedir)
-        self.sdic = {'s_win_main_destroy' : self.poldeg_quit}
-        self.widgets.signal_autoconnect(self.sdic)
+        show_info(_('This software is in pre-alfa stage and could\n'
+'seriously damage your system.\nPlease consider it before using poldeg.'))
 
     def poldeg_quit(self, widget, event):
         msg = gtk.MessageDialog(None, 0, gtk.MESSAGE_QUESTION,
@@ -34,6 +34,14 @@ gtk.BUTTONS_YES_NO, _('Quit poldeg?'))
         msg.destroy()
         if result == gtk.RESPONSE_YES:
             gtk.main_quit()
-	    return False
+            return False
         else:
             return True
+        
+    def signals(self, dict):
+        self.widgets.signal_autoconnect(dict)
+
+def show_info(info):
+    msg = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, info)
+    result = msg.run()
+    msg.destroy()
