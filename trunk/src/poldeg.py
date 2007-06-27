@@ -34,13 +34,11 @@ except:
     pass
 
 try:
-    import gtk
-    import gtk.glade
+    import gtk, gtk.glade
 except:
     poldegError(_('Couldn\'t import PyGTK modules.'))
 
-import pckgs
-import gui
+import pckgs, gui
 
 class Cpoldeg:
     def __init__(self):

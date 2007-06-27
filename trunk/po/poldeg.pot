@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-08 21:52+0200\n"
+"POT-Creation-Date: 2007-06-27 19:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,18 +16,73 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/misc.py:42
+#: ../src/gui.py:27
+msgid ""
+"This software is in pre-alfa stage and could\n"
+"seriously damage your system.\n"
+"Please consider it before using poldeg."
+msgstr ""
+
+#: ../src/gui.py:32
+msgid "Quit poldeg?"
+msgstr ""
+
+#: ../src/misc.py:41
 msgid "Couldn't find glade directory."
+msgstr ""
+
+#: ../src/pckgs.py:33
+msgid "poldek setup error."
 msgstr ""
 
 #: ../src/poldeg.py:28
 msgid "Couldn't import poldek module."
 msgstr ""
 
-#: ../src/poldeg.py:40
+#: ../src/poldeg.py:39
 msgid "Couldn't import PyGTK modules."
 msgstr ""
 
-#: ../src/poldeg.py:52
-msgid "poldek setup error."
+#: ../glade/poldeg.glade.h:1
+msgid "Deselect all"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:2
+msgid "Install"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:3
+msgid ""
+"Install\n"
+"selected"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:5
+msgid "Remove"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:6
+msgid ""
+"Remove\n"
+"selected"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:8
+msgid ""
+"Search for\n"
+"upgrades"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:10
+msgid "Select all"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:11
+msgid ""
+"Upgarde\n"
+"selected"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:13
+msgid "Upgrade"
 msgstr ""
