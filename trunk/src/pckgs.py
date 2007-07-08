@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import sys, poldek
+import poldek, misc
 from misc import _
 
 class Cpackages:
@@ -29,7 +29,7 @@ class Cpackages:
         try:
             self.ctx.setup()
         except:
-            poldegError(_('poldek setup error.'))
+            misc.poldegError(_('poldek setup error.'))
     
     def load(self):
         self.avail = self.ctx.get_avail_packages()

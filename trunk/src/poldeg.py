@@ -19,7 +19,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import sys, misc
+import misc
 from misc import _
 
 try:
@@ -38,22 +38,17 @@ try:
 except:
     misc.poldegError(_('Couldn\'t import PyGTK modules.'))
 
-import pckgs, gui
+import gui
 
 class Cpoldeg:
     def __init__(self):
         poldek.lib_init()
         self.win_main = gui.Cwin_main()
         self.pckgs = pckgs.Cpackages()
-        self.sdic = {'s_win_main_destroy' : self.win_main.poldeg_quit,
-'s_win_main_show': self.loading}
+        self.sdic = {'s_win_main_destroy': self.win_main.poldeg_quit}
         self.win_main.signals(self.sdic)
-        win = self.win_main.widgets.get_widget('win_main')
-        win.present()
-
-    def loading(self, widget):
         self.pckgs.load()
-
+	
 if __name__ == '__main__':
     poldeg_main = Cpoldeg()
     gtk.main()

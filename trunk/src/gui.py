@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import pygtk, gtk, gtk.glade, misc
+import gtk, misc
 from misc import _
 
 class Cwin_main:
