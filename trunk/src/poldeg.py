@@ -19,13 +19,13 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import sys
+import sys, misc
 from misc import _
 
 try:
     import poldek
 except:
-    poldegError(_('Couldn\'t import poldek module.'))
+    misc.poldegError(_('Couldn\'t import poldek module.'))
 
 try:
     import pygtk
@@ -36,7 +36,7 @@ except:
 try:
     import gtk, gtk.glade
 except:
-    poldegError(_('Couldn\'t import PyGTK modules.'))
+    misc.poldegError(_('Couldn\'t import PyGTK modules.'))
 
 import pckgs, gui
 

@@ -18,9 +18,8 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import sys
+import sys, poldek
 from misc import _
-import poldek
 
 class Cpackages:
     def __init__(self):

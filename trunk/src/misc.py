@@ -21,9 +21,9 @@
 import sys, os, gettext
 
 if os.path.isdir('../po'):
-    poldeg_podir = '../po'
+    podir = '../po'
 try:
-    txt = gettext.translation('poldeg', poldeg_podir)
+    txt = gettext.translation('poldeg', podir)
     _ = txt.gettext
 except:
     def _(str):
@@ -36,6 +36,6 @@ def poldegError(str):
     sys.exit(1)
     
 if os.path.isdir('../glade'):
-    poldeg_gladedir = '../glade'
+    gladedir = '../glade'
 else:
     poldegError(_('Couldn\'t find glade directory.'))

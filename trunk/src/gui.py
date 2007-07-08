@@ -18,12 +18,12 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import pygtk, gtk, gtk.glade
-from misc import _, poldeg_gladedir
+import pygtk, gtk, gtk.glade, misc
+from misc import _
 
 class Cwin_main:
     def __init__(self):
-        self.widgets = gtk.glade.XML('%s/poldeg.glade' % poldeg_gladedir)
+        self.widgets = gtk.glade.XML('%s/poldeg.glade' % misc.gladedir)
         show_info(_('This software is in pre-alfa stage and could\n'
 'seriously damage your system.\nPlease consider it before using poldeg.'))
 
