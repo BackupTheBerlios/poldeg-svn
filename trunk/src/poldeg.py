@@ -38,7 +38,7 @@ try:
 except:
     misc.poldegError(_('Couldn\'t import PyGTK modules.'))
 
-import gui
+import gui, pckgs
 
 class Cpoldeg:
     def __init__(self):
