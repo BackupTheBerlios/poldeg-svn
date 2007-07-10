@@ -23,6 +23,7 @@ from misc import _
 
 class Cpackages:
     def __init__(self):
+        '''Prepare poldek config and repositories'''
         self.ctx = poldek.poldek_ctx()
         self.cctx = poldek.poclidek_ctx(self.ctx)
         self.ctx.load_config()
@@ -32,5 +33,6 @@ class Cpackages:
             misc.poldegError(_('poldek setup error.'))
     
     def load(self):
+        '''Loading packages from repositories'''
         self.avail = self.ctx.get_avail_packages()
         self.cctx.load_packages(self.cctx.LOAD_ALL)    
