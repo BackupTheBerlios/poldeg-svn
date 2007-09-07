@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-27 19:43+0200\n"
+"POT-Creation-Date: 2007-09-07 22:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,45 +44,89 @@ msgid "Couldn't import PyGTK modules."
 msgstr ""
 
 #: ../glade/poldeg.glade.h:1
-msgid "Deselect all"
+msgid "All"
 msgstr ""
 
 #: ../glade/poldeg.glade.h:2
-msgid "Install"
+msgid "Applications"
 msgstr ""
 
 #: ../glade/poldeg.glade.h:3
+msgid "Base"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:4
+msgid "Daemons"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:5
+msgid "Deselect all"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:6
+msgid "Development"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:7
+msgid "Documentation"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:8
+msgid ""
+"Erease\n"
+"selected"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:10
+msgid "Fonts"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:11
+msgid "Groups"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:12
 msgid ""
 "Install\n"
 "selected"
 msgstr ""
 
-#: ../glade/poldeg.glade.h:5
-msgid "Remove"
+#: ../glade/poldeg.glade.h:14
+msgid "Libraries"
 msgstr ""
 
-#: ../glade/poldeg.glade.h:6
+#: ../glade/poldeg.glade.h:15
+msgid "Networking"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:16
+msgid "Others"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:17
+msgid "Reload list"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:18
 msgid ""
-"Remove\n"
+"Select\n"
+"upgradeable"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:20
+msgid "Themes"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:21
+msgid "Update indexes"
+msgstr ""
+
+#: ../glade/poldeg.glade.h:22
+msgid ""
+"Upgrade\n"
 "selected"
 msgstr ""
 
-#: ../glade/poldeg.glade.h:8
-msgid ""
-"Search for\n"
-"upgrades"
-msgstr ""
-
-#: ../glade/poldeg.glade.h:10
-msgid "Select all"
-msgstr ""
-
-#: ../glade/poldeg.glade.h:11
-msgid ""
-"Upgarde\n"
-"selected"
-msgstr ""
-
-#: ../glade/poldeg.glade.h:13
-msgid "Upgrade"
+#: ../glade/poldeg.glade.h:24
+msgid "X11"
 msgstr ""
