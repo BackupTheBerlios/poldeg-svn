@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #
-# poldeg
-# poldeg.py
+# poldeg - main module
 #
 # Copyright 2007 Lukasz Kies
 #
@@ -19,36 +18,23 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import misc
-from misc import _
-
-try:
-    import poldek
-except:
-    misc.poldegError(_('Couldn\'t import poldek module.'))
-
-try:
-    import pygtk
-    pygtk.require('2.2')
-except:
-    pass
-
-try:
-    import gtk, gtk.glade
-except:
-    misc.poldegError(_('Couldn\'t import PyGTK modules.'))
-
-import gui, pckgs
-
 class Cpoldeg:
     def __init__(self):
         poldek.lib_init()
-        self.win_main = gui.Cwin_main()
         self.pckgs = pckgs.Cpackages()
+        self.pckgs.load()
+        self.win_main = gui.Cwin_main()
         self.sdic = {'s_win_main_destroy': self.win_main.poldeg_quit}
         self.win_main.signals(self.sdic)
-        self.pckgs.load()
-	
+
 if __name__ == '__main__':
+    import misc
+    misc.init_poldeg()
+
+    import poldek
+    import gui
+    import pckgs
     poldeg_main = Cpoldeg()
+
+    import gtk
     gtk.main()

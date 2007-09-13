@@ -1,6 +1,5 @@
 #
-# poldeg
-# misc.py
+# poldeg - misc module
 #
 # Copyright 2007 Lukasz Kies
 #
@@ -18,24 +17,43 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import sys, os, gettext
+import sys
+import os
 
-if os.path.isdir('../po'):
-    podir = '../po'
-try:
-    txt = gettext.translation('poldeg', podir)
-    _ = txt.gettext
-except:
-    def _(str):
-        '''Leave given string as-is'''
-        return str
-    
-def poldegError(str):
-    '''Print error messages to console'''
-    print str
-    sys.exit(1)
-    
-if os.path.isdir('../glade'):
-    gladedir = '../glade'
-else:
-    poldegError(_('Couldn\'t find glade directory.'))
+def init_gettext():
+    '''Init gettext support'''
+
+    import __builtin__
+    import gettext
+    try:
+        txt = gettext.translation('poldeg')
+        _ = txt.gettext
+    except:
+        _ =  lambda s: s
+    _N = lambda s: s
+    __builtin__.__dict__['_'] = _
+    __builtin__.__dict__['_N'] = _N
+
+def init_gtk():
+    '''Init GTK+ and PyGTK modules'''
+
+    try:
+        import pygtk
+        pygtk.require('2.2')
+    except:
+        pass
+    try:
+        import gtk
+        import gtk.glade
+    except:
+        sys.exit(_('Couldn\'t init GTK+ and PyGTK modules.'))
+
+def init_poldeg():
+    '''Basic poldeg initialization'''
+
+    init_gettext()
+    try:
+        import poldek
+    except:
+        sys.exit(_('Couldn\'t import poldek\'s python module.'))
+    init_gtk()

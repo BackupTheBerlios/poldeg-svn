@@ -555,7 +555,9 @@
 	      <property name="left_margin">0</property>
 	      <property name="right_margin">0</property>
 	      <property name="indent">0</property>
-	      <property name="text" translatable="yes"></property>
+	      <property name="text" translatable="yes">Caution!
+This software is in pre-alfa stage and could seriously damage your system.
+Please consider it before using poldeg.</property>
 	    </widget>
 	  </child>
 	</widget>

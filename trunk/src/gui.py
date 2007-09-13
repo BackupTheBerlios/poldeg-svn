@@ -1,6 +1,5 @@
 #
-# poldeg
-# gui.py
+# poldeg - gui module
 #
 # Copyright 2007 Lukasz Kies
 #
@@ -18,14 +17,12 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import gtk, misc
-from misc import _
+import gtk
 
 class Cwin_main:
+
     def __init__(self):
-        self.widgets = gtk.glade.XML('%s/poldeg.glade' % misc.gladedir)
-        show_info(_('This software is in pre-alfa stage and could\n'
-'seriously damage your system.\nPlease consider it before using poldeg.'))
+        self.widgets = gtk.glade.XML('glade/poldeg.glade')
 
     def poldeg_quit(self, widget, event):
         msg = gtk.MessageDialog(None, 0, gtk.MESSAGE_QUESTION,
@@ -37,11 +34,6 @@ gtk.BUTTONS_YES_NO, _('Quit poldeg?'))
             return False
         else:
             return True
-        
+
     def signals(self, dict):
         self.widgets.signal_autoconnect(dict)
-
-def show_info(info):
-    msg = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, info)
-    result = msg.run()
-    msg.destroy()

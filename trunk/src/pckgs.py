@@ -1,6 +1,5 @@
 #
-# poldeg
-# pckgs.py
+# poldeg - pckgs module
 #
 # Copyright 2007 Lukasz Kies
 #
@@ -18,21 +17,24 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-import poldek, misc
-from misc import _
+import poldek
 
 class Cpackages:
+    
     def __init__(self):
         '''Prepare poldek config and repositories'''
+
         self.ctx = poldek.poldek_ctx()
         self.cctx = poldek.poclidek_ctx(self.ctx)
         self.ctx.load_config()
         try:
             self.ctx.setup()
         except:
-            misc.poldegError(_('poldek setup error.'))
+            sys.exit(_('Poldek setup error.'))
     
     def load(self):
+        
         '''Loading packages from repositories'''
+        
         self.avail = self.ctx.get_avail_packages()
         self.cctx.load_packages(self.cctx.LOAD_ALL)    
