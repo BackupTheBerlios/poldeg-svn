@@ -24,16 +24,15 @@ class _gui_main:
     def __init__(self):
         self.widgets = gtk.glade.XML('glade/poldeg.glade')
 
-    def poldeg_quit(self, widget, event):
-        msg = gtk.MessageDialog(None, 0, gtk.MESSAGE_QUESTION,
-gtk.BUTTONS_YES_NO, _('Quit poldeg?'))
+    def add_signals(self, dict):
+        self.widgets.signal_autoconnect(dict)
+
+def qmessage(widget, text):
+        msg = gtk.MessageDialog(widget, 0, gtk.MESSAGE_QUESTION,
+                                gtk.BUTTONS_YES_NO, text)
         result = msg.run()
         msg.destroy()
         if result == gtk.RESPONSE_YES:
-            gtk.main_quit()
-            return False
-        else:
             return True
-
-    def add_signals(self, dict):
-        self.widgets.signal_autoconnect(dict)
+        else:
+            return False

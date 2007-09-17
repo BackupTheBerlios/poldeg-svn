@@ -19,12 +19,21 @@
 #
 
 class _poldeg:
+    
     def __init__(self):
         poldek.lib_init()
         self.pckgs = pckgs._packages()
         self.win_main = gui._gui_main()
-        dict = {'s_win_main_destroy': self.win_main.poldeg_quit}
+        dict = {'s_win_main_destroy': self.poldeg_quit}
         self.win_main.add_signals(dict)
+        
+    def poldeg_quit(self, widget, event):
+        result = gui.qmessage(widget, _('Quit poldeg?'))
+        if result:
+            gtk.main_quit()
+            return False
+        else:
+            return True
 
 if __name__ == '__main__':
     import misc
