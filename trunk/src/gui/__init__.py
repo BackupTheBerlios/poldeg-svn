@@ -1,5 +1,5 @@
 #
-# poldeg - gui module
+# poldeg - gui module - init
 #
 # Copyright 2007 Lukasz Kies
 #
@@ -19,7 +19,7 @@
 
 import gtk
 
-class Cwin_main:
+class _gui_main:
 
     def __init__(self):
         self.widgets = gtk.glade.XML('glade/poldeg.glade')
@@ -35,5 +35,5 @@ gtk.BUTTONS_YES_NO, _('Quit poldeg?'))
         else:
             return True
 
-    def signals(self, dict):
+    def add_signals(self, dict):
         self.widgets.signal_autoconnect(dict)

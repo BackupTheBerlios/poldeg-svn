@@ -1,5 +1,5 @@
 #
-# poldeg - pckgs module
+# poldeg - pckgs module - init
 #
 # Copyright 2007 Lukasz Kies
 #
@@ -31,6 +31,7 @@ class _packages:
             self.ctx.setup()
         except:
             sys.exit(_('Poldek setup error.'))
+	self.load_packages()
     
     def load_packages(self):
         '''Loading packages from repositories'''

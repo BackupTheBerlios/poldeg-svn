@@ -18,23 +18,20 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #
 
-class Cpoldeg:
+class _poldeg:
     def __init__(self):
         poldek.lib_init()
-        self.pckgs = pckgs.Cpackages()
-        self.pckgs.load()
-        self.win_main = gui.Cwin_main()
-        self.sdic = {'s_win_main_destroy': self.win_main.poldeg_quit}
-        self.win_main.signals(self.sdic)
+        self.pckgs = pckgs._packages()
+        self.win_main = gui._gui_main()
+        dict = {'s_win_main_destroy': self.win_main.poldeg_quit}
+        self.win_main.add_signals(dict)
 
 if __name__ == '__main__':
     import misc
     misc.init_poldeg()
-
     import poldek
     import gui
     import pckgs
-    poldeg_main = Cpoldeg()
-
+    poldeg_main = _poldeg()
     import gtk
     gtk.main()
