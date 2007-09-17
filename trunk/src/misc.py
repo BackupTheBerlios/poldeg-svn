@@ -30,9 +30,7 @@ def init_gettext():
         _ = txt.gettext
     except:
         _ =  lambda s: s
-    _N = lambda s: s
     __builtin__.__dict__['_'] = _
-    __builtin__.__dict__['_N'] = _N
 
 def init_gtk():
     '''Init GTK+ and PyGTK modules'''

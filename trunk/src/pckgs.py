@@ -19,7 +19,7 @@
 
 import poldek
 
-class Cpackages:
+class _packages:
     
     def __init__(self):
         '''Prepare poldek config and repositories'''
@@ -32,8 +32,7 @@ class Cpackages:
         except:
             sys.exit(_('Poldek setup error.'))
     
-    def load(self):
-        
+    def load_packages(self):
         '''Loading packages from repositories'''
         
         self.avail = self.ctx.get_avail_packages()
